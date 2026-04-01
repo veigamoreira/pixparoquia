@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Copiar chave Pix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>Minha chave Pix</h2>
+  <p id="pixKey">123e4567-abcd-8901-2345-6789abcdef</p>
+  <button onclick="copyPix()">Copiar chave Pix</button>
+
+  <script>
+    function copyPix() {
+      const pixKey = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(pixKey).then(() => {
+        alert("Chave Pix copiada!");
+      });
+    }
+  </script>
+</body>
+</html>
